@@ -15,10 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-Route::get("/areas", "AreaController@index");
-Route::post("/areas", "AreaController@store");
-Route::get("/areas/{id}", "AreaController@show");
+Route::get('/cargaareas', 'ApiController@cargaareas');
+Route::get('/cargaempleados', 'ApiController@cargaempleados');
+Route::get('/buscaempleadoporid_empleado/{id}','ApiController@buscaempleadoporid_empleado');
+Route::delete('/eliminaempleado/{id_empleado}', 'ApiController@eliminaempleado');
+Route::post('/altaempleado', 'ApiController@altaempleado');
+Route::put('/modificaempleados', 'ApiController@modificaempleados');
+
+
+
+
 

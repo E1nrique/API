@@ -14,7 +14,7 @@ class CreateEmpleadosTable extends Migration
     public function up()
     {
         Schema::create('empleados', function (Blueprint $table) {
-            $table->id();
+            $table->id("id_empleado");
             $table->string("nombre");
             $table->string("apellidos");
             $table->bigInteger("edad");
@@ -24,7 +24,7 @@ class CreateEmpleadosTable extends Migration
             $table->string("foto");
             $table->timestamps();
 
-            $table->foreign("id_area")->references("id")->on("areas")->onDelete("cascade");
+            $table->foreign("id_area")->references("id_area")->on("areas")->onDelete("cascade");
         });
     }
 
